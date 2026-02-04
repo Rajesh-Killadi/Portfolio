@@ -15,6 +15,12 @@ const education = [
     period: "2017 – 2019",
     score: "CGPA: 8.96",
   },
+  {
+    degree: "S.S.C",
+    institution: "Govt High School, Andhra Pradesh",
+    period: "2016 – 2017",
+    score: "CGPA: 8.2",
+  }
 ];
 
 const EducationSection = () => {

@@ -3,9 +3,9 @@ import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Code2 } from "luci
 import { Button } from "@/components/ui/button";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/rajeshkilladi", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/rajeshkilladi", label: "LinkedIn" },
-  { icon: Code2, href: "https://leetcode.com/rajeshkilladi", label: "LeetCode" },
+  { icon: Github, href: "https://github.com/rajesh-killadi", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/rajesh-killadi-159915230/", label: "LinkedIn" },
+  { icon: Code2, href: "https://leetcode.com/u/RajeshKilladi/", label: "LeetCode" },
 ];
 
 const HeroSection = () => {
@@ -79,10 +79,16 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
           >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
-              <Mail className="w-4 h-4 mr-2" />
-              Get in Touch
-            </Button>
+            <a href="mailto:rajeshkilladi.in@gmail.com">
+  <Button
+    size="lg"
+    className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect"
+  >
+    <Mail className="w-4 h-4 mr-2" />
+    Get in Touch
+  </Button>
+</a>
+
             <Button size="lg" variant="outline" className="border-border hover:bg-secondary" asChild>
               <a href="#projects">
                 View Projects

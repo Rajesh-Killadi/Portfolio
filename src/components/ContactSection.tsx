@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "rajeshkilladi.in@gmail.com", href: "mailto:rajeshkilladi.in@gmail.com" },
@@ -13,9 +14,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/rajeshkilladi", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/rajeshkilladi", label: "LinkedIn" },
-  { icon: Code2, href: "https://leetcode.com/rajeshkilladi", label: "LeetCode" },
+  { icon: Github, href: "https://github.com/rajesh-killadi", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/rajesh-killadi-159915230/", label: "LinkedIn" },
+  { icon: Code2, href: "https://leetcode.com/u/RajeshKilladi/", label: "LeetCode" },
 ];
 
 const ContactSection = () => {
@@ -26,11 +27,28 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+
+    // Send email using EmailJS
+    emailjs.send(
+      "service_7mj9p5n", // replace with your service ID
+      "template_6wuznpq", // replace with your template ID
+      formData, // passes { name, email, message } to your template
+      "NV_vVOjYmiqrIyFKH" // replace with your public key
+    )
+    .then(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch((error) => {
+      console.error("Email send error:", error);
+      toast({
+        title: "Oops!",
+        description: "Something went wrong. Please try again later.",
+      });
     });
-    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -136,7 +154,7 @@ const ContactSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                 <Textarea
                   id="message"
-                  placeholder="Tell me about your project or opportunity..."
+                  placeholder="Write your message..."
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}

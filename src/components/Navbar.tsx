@@ -50,9 +50,15 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Download CV
-            </Button>
+            
+            <a href="/Rajesh_Java_Developer.pdf" download target="_blank">
+              <Button
+              size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
+                Download CV
+              </Button>
+            </a>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,9 +91,13 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
-                  Download CV
-                </Button>
+                <a href="/Rajesh_Java_Developer.pdf" download target="_blank">
+              <Button
+              size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
+                Download CV
+              </Button>
+            </a>
               </div>
             </motion.div>
           )}
