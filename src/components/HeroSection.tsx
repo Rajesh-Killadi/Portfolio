@@ -48,7 +48,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            <span className="text-foreground font-medium">Java Developer</span> building scalable backend systems with Spring Boot, Microservices & Cloud technologies
+            <span className="text-foreground font-medium">Junior Java Developer</span> with hands-on experience in building scalable backend systems with Spring Boot, Microservices & Cloud technologies
           </motion.p>
 
           <motion.div
